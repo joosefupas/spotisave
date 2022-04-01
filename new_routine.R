@@ -9,15 +9,14 @@ library(lubridate)
 remove(list=ls())
 
 # connect with your account to API
-client_id ="a5c60a5cdc364ba5aa03c662d5ae1543"
-client_secret = "dc7d5d3bbee54c92961957e7120d351b"
+client_id ="xxxxx"
+client_secret = "xxxxx"
 Sys.setenv(SPOTIFY_CLIENT_ID = client_id)
 Sys.setenv(SPOTIFY_CLIENT_SECRET = client_secret)
 access_token <- get_spotify_access_token()
 
 # select user ID (retrieved from spotify)
-# user_id = "azaadeh"
-user_id = c("oftanicola","lidiaberloco","azaadeh")
+user_id = c("oftanicola","azaadeh")
 
 for (user_id in user_id) {
   
@@ -71,7 +70,7 @@ for (user_id in user_id) {
   pr_temp = data.frame()
   
   
-  if (user_id =="azaadeh" || user_id =="lidiaberloco" ){
+  if (user_id =="azaadeh"){
     
     authorization = access_token
     playlist_tracks <- map_df(id_vectr, function(playlist_uri) {
@@ -141,7 +140,7 @@ for (user_id in user_id) {
       print(paste("Working on Playlist n:", counter))
       counter = counter+1
       if (print(sum(duplicated(pr$track.name)) == 0)) {
-        print("OK LET'S GO NO DUPLICATED")
+        print("OK LET'S GO")
       }
     
   }
@@ -160,7 +159,7 @@ for (user_id in user_id) {
   # save oftanicola
   # library(xlsx)
   getwd()
-  write.table(pr,file = paste("C:/Users/joose/Desktop/spotify/",user_id,"_",
+  write.table(pr,file = paste("~path/",user_id,"_",
                               format(Sys.time(), "%Y-%m-%d_%Z_%H-%M-%S"),
                               "_",".csv",sep=""),row.names = F,sep=",")
   
