@@ -13,7 +13,7 @@ Install R, spotifyr and dplyr libraries
 ### Installation
 
 1. Clone the repository to your local machine
-git clone https://github.com/yourusername/spotisave.git
+git clone https://github.com/joosefupas/spotisave.git
 2. Install the required packages
 ```r
 install.packages("spotifyr")
@@ -22,10 +22,11 @@ install.packages("dplyr")
 ```
 
 ## Usage
-Sign up for a Spotify Developer account and create a new app to obtain a client ID and secret key (https://developer.spotify.com/dashboard/applications).
-In the R script, replace the SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET values with your app's client ID and secret key.
-Replace the usernames vector with the Spotify usernames whose playlists you want to analyze.
-Run the script in R.
+1. Sign up for a Spotify Developer account and create a new app to obtain a client ID and secret key (https://developer.spotify.com/dashboard/applications) or (https://www.rcharlie.com/spotifyr/) for another introductory tutorial in ```spotifyr``` context.
+2. In the R script, replace the SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET values with your app's client ID and secret key.
+3. Replace the usernames vector with the Spotify usernames whose playlists you want to analyze.
+4. Run the script in R.
+
 The script will create a CSV file for each user in the same directory as the script. The file names will be in the format track_data_USERNAME.csv.
 
 ### Copy code
