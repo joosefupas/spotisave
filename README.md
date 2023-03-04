@@ -31,7 +31,7 @@ The script will create a CSV file for each user in the same directory as the scr
 
 ### Copy code
 ```r
-source("spotisave.R")
+source("SpotiSave.R")
 ```
 
 ### Output
